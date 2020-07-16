@@ -13,6 +13,21 @@ public class AccountTest {
         Account account = new Account();
         assertEquals(account.balance(), 0);
     }
+
+    @Test
+    public void firstDeposit() {
+        Account account = new Account();
+        account.deposit(10);
+        assertEquals(account.balance(), 10);
+    }
+
+    @Test
+    public void withdraw() {
+        Account account = new Account();
+        account.deposit(10);
+        account.withdraw(5);
+        assertEquals(account.balance(), 5);
+    }
     /*
     @Test
 	@Disabled
