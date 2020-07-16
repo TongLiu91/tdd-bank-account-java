@@ -18,4 +18,9 @@ public class Account {
     public void withdraw(double amount) {
         balance -= amount;
     }
+
+    public static void transfer(Account from, Account to, double amount) {
+        from.withdraw(amount);
+        to.deposit(amount);
+    }
 }

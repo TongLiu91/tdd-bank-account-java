@@ -28,6 +28,19 @@ public class AccountTest {
         account.withdraw(5);
         assertEquals(account.balance(), 5);
     }
+
+    @Test
+    public void transfer() {
+        Account from = new Account();
+        Account to = new Account();
+
+        from.deposit(10);
+        to.deposit(20);
+
+        Account.transfer(from, to, 3);
+        assertEquals(from.balance(), 7);
+        assertEquals(to.balance(), 23);
+    }
     /*
     @Test
 	@Disabled
